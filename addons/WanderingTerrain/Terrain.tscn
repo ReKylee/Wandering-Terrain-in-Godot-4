@@ -1,0 +1,27 @@
+[gd_scene load_steps=7 format=3 uid="uid://dpq38oojd06xl"]
+
+[ext_resource type="Script" path="res://addons/WanderingTerrain/example/WanderingTerrainProgress.gd" id="1_rhcnl"]
+[ext_resource type="ArrayMesh" uid="uid://nq5qhwnj8jb4" path="res://addons/WanderingTerrain/ClipPlaneMesh.obj" id="2_a6uqo"]
+[ext_resource type="Shader" path="res://addons/WanderingTerrain/example/BasicTerrainShader.gdshader" id="3_aoygb"]
+[ext_resource type="Script" path="res://addons/WanderingTerrain/CollisionTerrain.gd" id="3_epxyj"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_kh73l"]
+render_priority = 0
+shader = ExtResource("3_aoygb")
+shader_parameter/Height = 100.0
+shader_parameter/uv_offset = Vector2(0, 0)
+
+[sub_resource type="HeightMapShape3D" id="HeightMapShape3D_v3r78"]
+
+[node name="Terrain" type="StaticBody3D"]
+script = ExtResource("1_rhcnl")
+
+[node name="ClipPlaneMesh" type="MeshInstance3D" parent="."]
+mesh = ExtResource("2_a6uqo")
+surface_material_override/0 = SubResource("ShaderMaterial_kh73l")
+
+[node name="HeightmapCollision" type="CollisionShape3D" parent="." node_paths=PackedStringArray("terrain")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
+shape = SubResource("HeightMapShape3D_v3r78")
+script = ExtResource("3_epxyj")
+terrain = NodePath("../ClipPlaneMesh")

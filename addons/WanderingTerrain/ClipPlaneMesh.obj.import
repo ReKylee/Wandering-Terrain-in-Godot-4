@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://nq5qhwnj8jb4"
+path="res://.godot/imported/ClipPlaneMesh.obj-a616c44aa50744b13880bb9718b672dc.mesh"
+
+[deps]
+
+files=["res://.godot/imported/ClipPlaneMesh.obj-a616c44aa50744b13880bb9718b672dc.mesh"]
+
+source_file="res://Wandering-Terrain-in-Godot-4/addons/WanderingTerrain/ClipPlaneMesh.obj"
+dest_files=["res://.godot/imported/ClipPlaneMesh.obj-a616c44aa50744b13880bb9718b672dc.mesh", "res://.godot/imported/ClipPlaneMesh.obj-a616c44aa50744b13880bb9718b672dc.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
